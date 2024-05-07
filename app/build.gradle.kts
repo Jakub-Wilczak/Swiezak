@@ -37,6 +37,15 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    flavorDimensions += listOf("target")
+    productFlavors {
+        create("stud") {
+            dimension = "target"
+        }
+        create("any") {
+            dimension = "target"
+        }
+    }
 }
 
 dependencies {
