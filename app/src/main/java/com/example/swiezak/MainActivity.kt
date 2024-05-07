@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.example.swiezak.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,23 +18,16 @@ class MainActivity : AppCompatActivity() {
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val array = resources.getStringArray(R.array.products)
-        array.forEach {
-            val label = TextView(this).apply {
-                text = it
-            }
-            binding.productsLay.addView(label)
-        }
-        setContentView(binding.root)
 
-        val student = SecondActivityFeature()
-        binding.button2.setOnClickListener{
-//            if (student.isAvaible){
-            student.start(this)
-//            }
-//            else
-//            binding.button2.visibility = View.GONE
-        }
+//        ViewCompat.setOnApplyWindowInsetsListener(binding.main){v, insets =>
+//            val systemBars= insets.getInsets(WindowInsetsCompat.Type.statusBars())
+//        }
+//        }
+//
+//
+//        binding.button2.setOnClickListener{
+//            setContentView(R.layout.second_screen)
+//        }
 
 
     }
